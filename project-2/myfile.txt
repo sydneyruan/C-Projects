@@ -1,0 +1,84 @@
+.globl main
+.data
+.text
+main:
+addi sp sp -4
+sw fp 0(sp)
+mv fp sp
+addi sp sp -48
+sw ra -4(fp)
+sw s2 -8(fp)
+sw s3 -12(fp)
+sw s4 -16(fp)
+sw s5 -20(fp)
+sw s6 -24(fp)
+sw s7 -28(fp)
+sw s8 -32(fp)
+sw s9 -36(fp)
+sw s10 -40(fp)
+sw s11 -44(fp)
+addi s1 x0 1
+bnez s1 __label__0
+j __label__1
+__label__0:
+addi sp sp -4
+addi s1 x0 1
+sw s1 -52(fp)
+addi sp sp 4
+__label__1:
+addi s1 x0 1
+bnez s1 __label__2
+jal s1 __label__3
+__label__2:
+addi sp sp -4
+addi s1 x0 2
+sw s1 -52(fp)
+addi sp sp 4
+__label__3:
+addi sp sp -4
+addi s1 x0 1
+sw s1 -52(fp)
+addi sp sp 4
+addi s1 x0 0
+bnez s1 __label__4
+j __label__5
+__label__4:
+addi sp sp -4
+addi s1 x0 1
+sw s1 -52(fp)
+addi sp sp 4
+__label__5:
+addi s1 x0 0
+bnez s1 __label__6
+jal s1 __label__7
+__label__6:
+addi sp sp -4
+addi s1 x0 1
+sw s1 -52(fp)
+addi sp sp 4
+__label__7:
+addi sp sp -4
+addi s1 x0 1
+sw s1 -52(fp)
+addi sp sp 4
+addi s1 x0 0
+mv a0 s1
+j _main
+_main:
+lw ra -4(fp)
+lw s2 -8(fp)
+lw s3 -12(fp)
+lw s4 -16(fp)
+lw s5 -20(fp)
+lw s6 -24(fp)
+lw s7 -28(fp)
+lw s8 -32(fp)
+lw s9 -36(fp)
+lw s10 -40(fp)
+lw s11 -44(fp)
+mv sp fp
+lw fp 0(sp)
+addi sp sp 4
+mv a1 a0
+addi a0 x0 17
+ecall

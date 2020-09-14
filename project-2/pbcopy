@@ -1,0 +1,170 @@
+.globl main
+.data
+__str__0:
+.byte 83
+.byte 117
+.byte 99
+.byte 99
+.byte 101
+.byte 115
+.byte 115
+.byte 32
+.byte 49
+.byte 0
+.byte 0
+.byte 0
+__str__1:
+.byte 83
+.byte 117
+.byte 99
+.byte 99
+.byte 101
+.byte 115
+.byte 115
+.byte 32
+.byte 50
+.byte 0
+.byte 0
+.byte 0
+__str__2:
+.byte 70
+.byte 97
+.byte 105
+.byte 108
+.byte 117
+.byte 114
+.byte 101
+.byte 32
+.byte 50
+.byte 0
+.byte 0
+.byte 0
+__str__3:
+.byte 70
+.byte 97
+.byte 105
+.byte 108
+.byte 117
+.byte 114
+.byte 101
+.byte 32
+.byte 51
+.byte 0
+.byte 0
+.byte 0
+__str__4:
+.byte 70
+.byte 97
+.byte 105
+.byte 108
+.byte 117
+.byte 114
+.byte 101
+.byte 32
+.byte 52
+.byte 0
+.byte 0
+.byte 0
+__str__5:
+.byte 83
+.byte 117
+.byte 99
+.byte 99
+.byte 101
+.byte 115
+.byte 115
+.byte 32
+.byte 52
+.byte 0
+.byte 0
+.byte 0
+.text
+main:
+addi sp sp -4
+sw fp 0(sp)
+mv fp sp
+addi sp sp -48
+sw ra -4(fp)
+sw s2 -8(fp)
+sw s3 -12(fp)
+sw s4 -16(fp)
+sw s5 -20(fp)
+sw s6 -24(fp)
+sw s7 -28(fp)
+sw s8 -32(fp)
+sw s9 -36(fp)
+sw s10 -40(fp)
+sw s11 -44(fp)
+addi s1 x0 1
+bnez s1 __label__0
+j __label__1
+__label__0:
+addi sp sp -4
+la s1 __str__0
+sw s1 0(sp)
+jal ra PrintString
+addi sp sp 4
+__label__1:
+addi s1 x0 1
+bnez s1 __label__2
+__label__2:
+addi sp sp -4
+la s1 __str__1
+sw s1 0(sp)
+jal ra PrintString
+addi sp sp 4
+__label__4:
+__label__3:
+addi sp sp -4
+la s1 __str__2
+sw s1 0(sp)
+jal ra PrintString
+addi sp sp 4
+__label__4:
+addi s1 x0 0
+bnez s1 __label__5
+j __label__6
+__label__5:
+addi sp sp -4
+la s1 __str__3
+sw s1 0(sp)
+jal ra PrintString
+addi sp sp 4
+__label__6:
+addi s1 x0 0
+bnez s1 __label__7
+__label__7:
+addi sp sp -4
+la s1 __str__4
+sw s1 0(sp)
+jal ra PrintString
+addi sp sp 4
+__label__9:
+__label__8:
+addi sp sp -4
+la s1 __str__5
+sw s1 0(sp)
+jal ra PrintString
+addi sp sp 4
+__label__9:
+addi s1 x0 0
+mv a0 s1
+j _main
+_main:
+lw ra -4(fp)
+lw s2 -8(fp)
+lw s3 -12(fp)
+lw s4 -16(fp)
+lw s5 -20(fp)
+lw s6 -24(fp)
+lw s7 -28(fp)
+lw s8 -32(fp)
+lw s9 -36(fp)
+lw s10 -40(fp)
+lw s11 -44(fp)
+mv sp fp
+lw fp 0(sp)
+addi sp sp 4
+mv a1 a0
+addi a0 x0 17
+ecall
